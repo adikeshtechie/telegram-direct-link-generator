@@ -1,1 +1,1 @@
-"# telegram-direct-link-generator" 
+A website which generates direct link for telegram posts
