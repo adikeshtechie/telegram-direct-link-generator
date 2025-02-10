@@ -1,5 +1,6 @@
 let input = document.getElementById("link");
 document.getElementById("wrapper").style.display = 'none';
+document.getElementById("redirect").style.display = 'none';
 
 const urlParams = new URLSearchParams(window.location.search);
 const value = urlParams.get("id");
@@ -11,6 +12,7 @@ if (verify == "create") {
 
 if (value) {
     window.location.href = decodeText(value);
+    document.getElementById("redirect").style.value = 'flex';
 } else {
     document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("submit").addEventListener("click", () => {

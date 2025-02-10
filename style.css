@@ -16,7 +16,7 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-#wrapper {
+.theme {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +24,10 @@ body {
     background: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
     padding: 40px;
+}
+
+#redirect {
+    display: none;
 }
 
 h1 {
