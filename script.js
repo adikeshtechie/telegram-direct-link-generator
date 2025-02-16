@@ -34,6 +34,14 @@ if (value) {
                 alert("Direct Link Copied to Clipboard!");
             }
         });
+
+        document.getElementById("copyapp").addEventListener("click", () => {
+            let generatedLink = directLinkGeneratorForApp();
+            if (generatedLink) {
+                copyToClipboard(generatedLink);
+                alert("Direct Link Copied to Clipboard!");
+            }
+        });
     });
 }
 
@@ -54,6 +62,17 @@ function directLinkGenerator() {
     let postId = parts[4];
     let directLink = encodeText(`tg://resolve?domain=${channelName}&post=${postId}`);
     return `https://telegramdirectlinkgenerator.netlify.app/?id=${directLink}`;
+}
+
+function directLinkGeneratorForApp() {
+    let link = input.value;
+    let parts = link.split("/");
+    if (parts.length < 5) return "";
+
+    let channelName = parts[3];
+    let postId = parts[4];
+    let directLink = encodeText(`tg://resolve?domain=${channelName}&post=${postId}`);
+    return directLink;
 }
 
 function copyToClipboard(text) {
